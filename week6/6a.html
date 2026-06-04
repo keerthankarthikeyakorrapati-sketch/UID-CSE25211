@@ -1,0 +1,84 @@
+!DOCTYPE html>
+<html>
+<head>
+<title>E-Store</title>
+<style>
+body{margin:0;font-family:Arial;background:#1e1e2f;}
+.container{display:grid;grid-template-rows:80px 80px 1fr 60px;height:100vh;}
+.header{background:linear-gradient(90deg,#00dbde,#fc00ff);color:white;text-align:center;line-height:80px;font-size:30px;letter-spacing:2px;text-transform:uppercase;}
+.sale{background:linear-gradient(90deg,#f83600,#f9d423);color:black;text-align:center;line-height:80px;font-size:24px;font-weight:bold;}
+.main{display:grid;grid-template-columns:1fr 3fr;}
+.categories{background:#2c3e50;padding:20px;}
+.categories h3{color:#f1c40f;margin-top:0;}
+.categories label{display:block;background:#34495e;color:white;padding:12px;margin-bottom:12px;border-radius:8px;cursor:pointer;transition:0.3s;}
+.categories label:hover{background:#f39c12;}
+input[type="radio"]{display:none;}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px;background:#ecf0f1;}
+.product{background:white;padding:12px;text-align:center;border-radius:10px;box-shadow:0 10px 20px rgba(0,0,0,0.1);display:none;}
+.product img{width:100%;height:200px;object-fit:cover;border-radius:6px;}
+.price{color:#e74c3c;font-weight:bold;font-size:20px;}
+button{margin:6px;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;transition:0.3s;}
+.cart{background:#3498db;color:white;}
+.buy{background:#2ecc71;color:white;}
+button:hover{transform:scale(1.1);box-shadow:0 0 10px rgba(0,0,0,0.2);}
+.footer{background:#2c3e50;color:white;text-align:center;line-height:60px;}
+#all:checked~.main .products .product,
+#mobile:checked~.main .products .mobile,
+#laptop:checked~.main .products .laptop,
+#accessory:checked~.main .products .accessory,
+#watch:checked~.main .products .watch{display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">Modern Tech Store</div>
+<div class="sale">FLASH SALE: SHOP NOW</div>
+<input type="radio" name="cat" id="all" checked>
+<input type="radio" name="cat" id="mobile">
+<input type="radio" name="cat" id="laptop">
+<input type="radio" name="cat" id="accessory">
+<input type="radio" name="cat" id="watch">
+<div class="main">
+<div class="categories">
+<h3>Categories</h3>
+<label for="all">Show All</label>
+<label for="mobile">Smartphones</label>
+<label for="laptop">Workstations</label>
+<label for="accessory">Audio Gear</label>
+<label for="watch">Timepieces</label>
+</div>
+<div class="products">
+<div class="product mobile">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97">
+<h4>Pro Smartphone</h4>
+<p class="price">34999</p>
+<button class="cart">Add</button>
+<button class="buy">Buy</button>
+</div>
+<div class="product laptop">
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853">
+<h4>Gaming Laptop</h4>
+<p class="price">44999</p>
+<button class="cart">Add</button>
+<button class="buy">Buy</button>
+</div>
+<div class="product accessory">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
+<h4>Headphones</h4>
+<p class="price">2250</p>
+<button class="cart">Add</button>
+<button class="buy">Buy</button>
+</div>
+<div class="product watch">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+<h4>Classic Watch</h4>
+<p class="price">2999</p>
+<button class="cart">Add</button>
+<button class="buy">Buy</button>
+</div>
+</div>
+</div>
+<div class="footer">Copyrights Reserved 2026</div>
+</div>
+</body>
+</html>

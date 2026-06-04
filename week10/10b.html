@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sort Three Numbers</title>
+</head>
+<body>
+
+<script>
+function sortNumbers(a, b, c) {
+let temp;
+// Swap a and b if needed
+if (a > b) {
+temp = a;
+a = b;
+b = temp;
+}
+// Swap a and c if needed
+if (a > c) {temp = a;
+a = c;
+c = temp;
+}
+// Swap b and c if needed
+if (b > c) {
+temp = b;
+b = c;
+c = temp;
+}
+alert("Sorted order: " + a + ", " + b + ", " + c);
+}
+// Example call
+sortNumbers(9, 3, 7);
+</script>
+</body>
+</html>

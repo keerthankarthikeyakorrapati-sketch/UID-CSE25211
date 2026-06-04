@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Programs</title>
+<style>
+body{
+    font-family: Arial;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 50px;
+}
+h1{
+    color: #333;
+}
+.container{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    margin: auto;
+    border: 1px solid #ccc;
+}
+input{
+    padding: 8px;
+    width: 80%;
+    margin: 10px;
+    font-size: 14px;
+}
+button{
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #45a049;
+}
+#output{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+}
+</style>
+</head>
+
+<body>
+<h1>Number Checker</h1>
+
+<div class="container">
+    <input type="number" id="num" placeholder="Enter a number">
+    <br>
+
+    <button onclick="checkEven()">Even</button>
+    <button onclick="checkOdd()">Odd</button>
+    <button onclick="checkPrime()">Prime</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="checkArmstrong()">Armstrong</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+function getNumber(){
+    return parseInt(document.getElementById("num").value);
+}
+
+function display(result){
+    document.getElementById("output").innerText = result;
+}
+
+function checkEven(){
+    let n = getNumber();
+
+    if(isNaN(n)){
+        display("Please enter a number");
+        return;
+    }
+
+    if(n % 2 === 0)
+        display(n + " is Even");
+    else
+        display(n + " is Not Even");
+}
+
+function checkOdd(){
+    let n = getNumber();
+
+    if(isNaN(n)){
+        display("Please enter a number");
+        return;
+    }
+
+    if(n % 2 !== 0)
+        display(n + " is Odd");
+    else
+        display(n + " is Not Odd");
+}
+
+function checkPrime(){
+    let n = getNumber();
+
+    if(isNaN(n)){
+        display("Please enter a number");
+        return;
+    }
+
+    if(n < 2){
+        display("Not a Prime Number");
+        return;
+    }
+
+    for(let i = 2; i <= Math.sqrt(n); i++){
+        if(n % i === 0){
+            display(n + " is Not Prime");
+            return;
+        }
+    }
+
+    display(n + " is Prime");
+}
+
+function factorial(){
+    let n = getNumber();
+
+    if(isNaN(n)){
+        display("Please enter a number");
+        return;
+    }
+
+    if(n < 0){
+        display("Factorial not defined for negative numbers");
+        return;
+    }
+
+    let fact = 1;
+
+    for(let i = 1; i <= n; i++){
+        fact *= i;
+    }
+
+    display("Factorial of " + n + " is " + fact);
+}
+
+function checkArmstrong(){
+    let n = getNumber();
+
+    if(isNaN(n)){
+        display("Please enter a number");
+        return;
+    }
+
+    let temp = n;
+    let sum = 0;
+    let digits = n.toString().length;
+
+    while(temp > 0){
+        let rem = temp % 10;
+        sum += Math.pow(rem, digits);
+        temp = Math.floor(temp / 10);
+    }
+
+    if(sum === n)
+        display(n + " is an Armstrong Number");
+    else
+        display(n + " is Not an Armstrong Number");
+}
+</script>
+
+</body>
+</html>

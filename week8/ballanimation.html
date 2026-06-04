@@ -1,0 +1,41 @@
+!DOCTYPE html>
+<html>
+<head>
+<title>Moving Ball</title>
+<style>
+body {
+text-align: center;
+margin-top: 100px;
+font-family: Arial;
+}
+h1 {
+margin-bottom: 40px;
+}
+.ball {
+width: 100px;
+height: 100px;
+background-color: green;
+border-radius: 50%;
+margin: auto;
+/* animation */
+animation: moveUpDown 2s infinite;
+}
+/* keyframes */
+@keyframes moveUpDown {
+0% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-150px);
+}
+100% {
+transform: translateY(0);
+}
+}
+</style>
+</head>
+<body>
+<h1>Ball Animation</h1>
+<div class="ball"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Username Checker</title>
+<style>
+/* This makes the message look like a warning */
+#warning {
+color: red;
+display: none; /* Starts hidden */
+}
+</style>
+</head>
+<body>
+
+<h3>Create a Username</h3>
+<input type="text" id="userBox" placeholder="Type here...">
+<p id="warning">Too short! Needs 5+ characters.</p>
+<script>
+// 1. Tell the computer which elements to watch
+const box = document.getElementById('userBox');
+const msg = document.getElementById('warning');
+// 2. Listen for when the user types (the 'input' event)
+box.addEventListener('input', function() {
+// 3. Check the length of the text inside the box
+if (box.value.length > 0 && box.value.length < 5) {
+// Show message if it's 1, 2, 3, or 4 characters
+msg.style.display = "block";
+} else {
+// Hide it if it's empty or 5+ characters
+msg.style.display = "none";
+}
+});
+</script>
+</body>
+</html>
